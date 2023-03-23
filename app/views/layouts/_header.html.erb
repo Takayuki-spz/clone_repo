@@ -1,0 +1,93 @@
+<div class="nav-box">
+  <div class="nav-box__inner">
+    <div class="nav-box__content logo-box">
+      <%= link_to image_tag("logo.png", alt: "Site Logo"), root_path, class: "logo" %>
+    </div>
+<% if logged_in? %>
+    <div class="nav-box__content user-info-box">
+      <div class="user-icon-box">
+        <%= image_tag "user-icon.jpg", alt: "ユーザーアイコン", class: "user-icon" %>
+      </div>
+      <div class="username-box">
+        <p class="username"><%= current_user.name %></p>
+      </div>
+      <div class="mypage-box">
+        <%= link_to current_user, class: "mypage-link" do %>
+          <div class="nav-item nav-item-highlight nav-item-mypage">
+            <i class="fas fa-smile"></i>
+            <span class="nav-title">マイページ</span>
+          </div>
+        <% end %>
+      </div>
+      <%= render 'shared/stats' %>
+    </div>
+<% end %>
+    <div class="nav-box__content">
+      <nav class="nav">
+        <ul class="nav-items">
+<% if logged_in? %>
+          <li class="item item-create">
+            <%= link_to root_path, class: "item-link create-link" do %>
+              <div class="nav-item item-box create-box">
+                <i class="nav-item-icon fas fa-plus"></i>
+                <span class="nav-title">記録する</span>
+              </div>
+            <% end %>
+          </li>
+<% end %>
+          <li class="item">
+            <%= link_to root_path, class: "item-link" do %>
+              <div class="nav-item item-box">
+                <i class="nav-item-icon fas fa-home"></i>
+                <span class="nav-title">ホーム</span>
+              </div>
+            <% end %>
+          </li>
+<% if logged_in? %>
+          <li class="item">
+            <%= link_to users_path, class: "item-link" do %>
+              <div class="nav-item item-box">
+                <i class="nav-item-icon fas fa-envelope"></i>
+                <span class="nav-title">ユーザー一覧</span>
+              </div>
+            <% end %>
+          </li>
+          <li class="item">
+            <%= link_to users_path, class: "item-link" do %>
+              <div class="nav-item item-box">
+                <i class="nav-item-icon fas fa-clock"></i>
+                <span class="nav-title">タイムライン</span>
+              </div>
+            <% end %>
+          </li>
+          <li class="item">
+            <%= link_to edit_user_path(current_user), class: "item-link" do %>
+              <div class="nav-item item-box">
+                <i class="nav-item-icon fas fa-cog"></i>
+                <span class="nav-title">設定</span>
+              </div>
+            <% end %>
+          </li>
+          <li class="item">
+            <%= link_to logout_path, data: { "turbo-method": :delete }, class: "item-link" do %>
+              <div class="nav-item item-box">
+                <i class="nav-item-icon fas fa-sign-out-alt"></i>
+                <span class="nav-title">ログアウト</span>
+              </div>
+            <% end %>
+          </li>
+<% else %>
+          <li class="item">
+            <%= link_to login_path, class: "item-link" do %>
+              <div class="nav-item item-box">
+                <i class="nav-item-icon fas fa-sign-out-alt"></i>
+                <span class="nav-title">ログイン</span>
+              </div>
+            <% end %>
+          </li>
+<% end %>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>

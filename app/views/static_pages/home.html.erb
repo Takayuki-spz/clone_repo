@@ -1,0 +1,53 @@
+<div class="main">
+  <div class="home-wrapper">
+    <div class="home_center_wrapper">
+      <div class="search-box">
+        <form method="get" action="#" class="search_form">
+          <input type="text" size="25" placeholder="キーワード検索">
+          <input type="submit" value="検索">
+        </form>
+      </div>
+      <h1 class="kinds-name">タイムライン</h1>
+      <% flash.each do |message_type, message| %>
+      <div class="alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+      <% if logged_in? %>
+      <div class="micropost_form_box">
+        <section class="micropost_form_section">
+          <%= render 'shared/micropost_form' %>
+        </section>
+      </div>
+      <% end %>
+      <div class="timeline_wrapper">
+        <%= render 'shared/feed' %>
+      </div>
+    </div>
+  </div>
+  <aside class="aside">
+    <div class="home-aside-wrapper">
+      <h1 class="kinds-name">ユーザーリスト</h1>
+      <ul class="latest_users">
+        <% @latest_users.each do |latest_user| %>
+          <li class="latest_user">
+            <%= link_to latest_user, class: "latest_user_link" do %>
+              <div class="latest_user_icon">
+              </div>
+              <div class="latest_user_info">
+                <span class="latest_user_name"><%= latest_user.name %></span>
+                <span class="latest_user_resist"><%= latest_user.created_at.strftime('%Y/%m/%d %H:%M:%S') %></span>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+      <div class="more_btn_wrapper">
+        <%= link_to users_path, class: "more_btn_link" do %>
+          <div class="more_btn">
+            <span class="more_btn_title">もっと見る＞</span>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </aside>
+</div>
+

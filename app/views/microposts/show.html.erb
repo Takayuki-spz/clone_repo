@@ -1,0 +1,23 @@
+<% flash.each do |message_type, message| %>
+  <div class="alert-<%= message_type %>"><%= message %></div>
+<% end %>
+
+<h1>投稿者：<%= @micropost.user.name %></h1>
+<h2>投稿日：<%= @micropost.created_at.strftime('%Y/%m/%d %H:%M:%S') %></h2>
+<p><%= @micropost.content %></p>
+
+<div class="comment_form_box">
+  <section class="comment_form_section">
+    <%= render 'shared/comment_form' %>
+  </section>
+</div>
+
+<h2>コメント一覧</h2>
+<% if @comments.total_entries.zero? %>
+  コメントはありません。
+<% else %>
+  <ol class="comments">
+    <%= render @comments %>
+  </ol>
+  <%= will_paginate @comments %>
+<% end %>

@@ -1,0 +1,10 @@
+<%= form_with(model: @micropost, class: "micropost_form") do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="micropost_form_item">
+    <%= f.text_area :content, class: "micropost_textarea", placeholder: "ここに投稿内容を記入..." %>
+    <%= f.submit "投稿する", class: "btn-primary" %>
+  </div>
+  <div class="micropost_form_image">
+    <%= f.file_field :image, class: "micropost_form_image_select", accept: "image/jpeg,image/gif,image/png" %>
+  </div>
+<% end %>
