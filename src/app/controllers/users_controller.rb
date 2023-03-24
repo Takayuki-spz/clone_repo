@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :admin_user,     only: :destroy
 
   def index
-    @users = User.order(created_at: :desc).paginate(page: params[:page], per_page: 15)
+    @users = User.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
   end
 
   def show
@@ -49,14 +49,14 @@ class UsersController < ApplicationController
   def following
     @title = "フォロー"
     @user  = User.find(params[:id])
-    @users = @user.following.paginate(page: params[:page])
+    @users = @user.following.paginate(page: params[:page], per_page: 10)
     render 'show_follow', status: :unprocessable_entity
   end
 
   def followers
     @title = "フォロワー"
     @user  = User.find(params[:id])
-    @users = @user.followers.paginate(page: params[:page])
+    @users = @user.followers.paginate(page: params[:page], per_page: 10)
     render 'show_follow', status: :unprocessable_entity
   end
 
