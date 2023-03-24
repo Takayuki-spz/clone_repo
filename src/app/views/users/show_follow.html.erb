@@ -1,16 +1,12 @@
-<h1><%= @user.name %></h1>
- <span><%= link_to "マイページ", @user %></span>
- <%= @user.microposts.count %>
- <%= render 'shared/stats' %>
- <% if @users.any? %>
-    <% @users.each do |user| %>
-      <%= link_to user.name, user %>
+<div class="main_wrapper">
+	<div class="main_inner">
+    <h1><%= @user.name %></h1>
+    <%= render 'shared/stats' %>
+    <% if @users.any? %>
+      <ul class="users_items">
+        <%= render @users %>
+      </ul>
+      <%= will_paginate %>
     <% end %>
-<% end %>
-
-<% if @users.any? %>
-  <ul>
-    <%= render @users %>
-  </ul>
-  <%= will_paginate %>
-<% end %>
+  </div>
+</div>

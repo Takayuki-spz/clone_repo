@@ -83,10 +83,6 @@ input[type="file"] {
   }
 }
 
-/*--------------------------- 
-        ぺージネーション
-----------------------------*/
-
 
 /*---------------------------
     application.html.erb
@@ -120,6 +116,23 @@ input[type="file"] {
     text-decoration: underline;
   }
 }
+@media screen and (max-width: 960px) {
+  .wrapper {
+    width: 100vw;
+    .contents {
+      flex-direction: column;
+    }
+  }
+  .nav-box, .aside {
+    position: static;
+  }
+  .kinds-name {
+  }
+  .userid-link{
+    &:hover {
+    }
+  }
+}
 
 /*--------------------------- 
             ナビバー
@@ -140,9 +153,6 @@ input[type="file"] {
   display: block;
   font-size: 15px;
 }
-@media screen and (min-width: 960px) {
-  
-}
 
 .nav-box {
   width: 20%;
@@ -150,11 +160,12 @@ input[type="file"] {
     width: 75%;
     margin: 30px auto;
     .logo-box {
-      width: auto;
-      .logo {
-        width: 100%;
+      width: 100px;
+      height: 100%;
+      .logo{
         img {
           width: 100%;
+          height: 100%;
           object-fit: cover;
         }
       }
@@ -220,33 +231,6 @@ input[type="file"] {
           }
         }
       }
-      .stats {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        .stat {
-          text-align: center;
-            .cnt {
-              color: $nav-title__color;
-              font-size: 20px;
-            }
-            .following-cnt::after {
-              content: 'Following';
-              font-size: 12px;
-              display: block;
-            }
-            .follower-cnt::after {
-              content: 'Follower';
-              font-size: 12px;
-              display: block;
-            }
-          
-        }
-        .stat-left {
-          margin-right: 20px;
-        }
-      }
     }
     .nav-box__content {
       width: 100%;
@@ -305,23 +289,93 @@ input[type="file"] {
         }
       }
     }
-    .logo-box {
-      height: 45px;
-      background-color: #6495ed;
-      .logo-link{
-        height: 100%;
-        &:hover {
-          opacity: 1;
+  }
+}
+/*------------- max-width: 960px -----------*/
+@media screen and (max-width: 960px) {
+  .nav-box {
+    width: 100%;
+    .nav-box__inner {
+      .logo-box {
+        .logo {
+          img {
+          }
         }
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
+      }
+      .user-info-box {
+        .user-icon-box {
+          img {
+          }
+        }
+        .username-box {
+          .username {
+          }
+          .userid-link {
+            .userid{
+            }
+          }
+        }
+        .mypage-box{
+          .mypage-link {
+            .nav-item-mypage{
+              .fa-smile {
+              }
+              .nav-title {
+              }
+            }
+            .nav-item-highlight:hover {
+              .fa-smile {
+              }
+              .nav-title {
+              }
+            }
+          }
+        }
+      }
+      .nav-box__content {
+        .nav {
+          .nav-items {
+            .item {
+              .item-link{
+                .nav-item {
+                  .nav-item-icon{
+                    .fas {
+                    }
+                  }
+                  .nav-title {
+                  }
+                }  
+              }
+              &:last-child {
+              }
+            }
+            .item-create {
+              &:hover {
+                .create-link{
+                  .create-box {
+                  }
+                }
+              }
+              .create-link{
+                .create-box {
+                }
+              }
+            }
+          }
+        }
+      }
+      .logo-box {
+        .logo-link{
+          &:hover {
+          }
+          img {
+          }
         }
       }
     }
   }
 }
+
 
 /*---------------------------
     マイクロポストパーシャル
@@ -367,6 +421,27 @@ input[type="file"] {
   .micropost_delete {
     font-size: 13px;
     margin-top: 15px;
+  }
+}
+/*------------- max-width: 960px -----------*/
+@media screen and (max-width: 960px) {
+  .micropost {
+    .micropost_info_wrapper {
+      .micropost_user_icon{
+      }
+      .micropost_info {
+        .link-button {
+          &:hover {
+          }
+        }
+        .micropost_timestamp {
+        }
+      }
+    }
+    .micropost_content {
+    }
+    .micropost_delete {
+    }
   }
 }
 
@@ -518,6 +593,8 @@ main {
       width: 500px;
       /*---------------------------
                 ユーザー一覧
+                フォロー一覧
+               フォロワー一覧
       ----------------------------*/
       .users_items {
         .users_item {
@@ -548,18 +625,6 @@ main {
       /*---------------------------
                ユーザー詳細
       ----------------------------*/
-      .user_stats {
-        .stats {
-          .stat_detail {
-            .following-cnt::before {
-              content: 'フォロー数　：';
-            }
-            .follower-cnt::before {
-              content: 'フォロワー数：';
-            }
-          }
-        }
-      }
       .follow_form {
         margin-top: 20px;
         .follow_btn {
@@ -568,4 +633,119 @@ main {
       }
     }
   }
+}
+/*------------- max-width: 960px -----------*/
+@media screen and (max-width: 960px) {
+  main {
+    width: 100%;  
+    /*--------------------------- 
+        static_pagesコントローラ
+    ----------------------------*/
+    .main {
+      width: 100%;
+      flex-direction: column;
+      .home-wrapper{
+        width: 100%;
+        .home_center_wrapper {
+          .search-box {
+            .search_form{
+            }
+            .search_form input[type="text"]{
+              &:focus {
+              }
+            }
+            .search_form input[type="submit"] {
+            }
+          }
+          .micropost_form_box {
+            .micropost_form_section {
+              .micropost_form {
+                .micropost_form_item {
+                  .micropost_textarea {
+                    &:focus {
+                    }
+                  }
+                  .btn-primary {
+                    &:hover {
+                    }
+                  }
+                }
+                .micropost_form_image {
+                  margin-top: 10px;
+                }
+              }
+            }
+          }
+        }
+      }     
+      /*--------------------------- 
+              homeのaside
+      ----------------------------*/
+      .aside {
+        display: none;
+      }
+    }
+    .main_wrapper {
+      .main_inner {
+        width: 100%;
+        /*---------------------------
+                  ユーザー一覧
+        ----------------------------*/
+        .users_items {
+          .users_item {
+            .user_link {
+              .user_item_wrapper {
+                .user_icon {
+                }
+                .user_info {
+                  .user_delete_link {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+  
+/*--------------------------- 
+     フォロー/フォロワー数
+----------------------------*/
+.stats {
+display: flex;
+justify-content: center;
+margin-top: 20px;
+margin-bottom: 20px;
+.stat {
+  text-align: center;
+    .cnt {
+      color: $nav-title__color;
+      font-size: 20px;
+    }
+    .following-cnt::after {
+      content: 'Following';
+      font-size: 12px;
+      display: block;
+    }
+    .follower-cnt::after {
+      content: 'Follower';
+      font-size: 12px;
+      display: block;
+    }
+  }
+  .stat-left {
+    margin-right: 20px;
+  }
+} 
+/*------------- max-width: 960px -----------*/
+@media screen and (max-width: 960px) {
+  .stats {
+  justify-content: left;
+  // margin-left: 20px;
+  .stat {
+    text-align: center;
+    }
+  } 
 }

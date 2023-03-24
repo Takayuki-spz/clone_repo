@@ -515,12 +515,12 @@ main .main_wrapper .main_inner .users_items .users_item .user_link .user_item_wr
 main .main_wrapper .main_inner .users_items .users_item .user_link .user_item_wrapper .user_info .user_delete_link {
   display: block;
 }
-main .main_wrapper .main_inner .user_stats .stats .stat_detail .following-cnt::before {
+/* main .main_wrapper .main_inner .user_stats .stats .stat_detail .following-cnt::before {
   content: "フォロー数　：";
 }
 main .main_wrapper .main_inner .user_stats .stats .stat_detail .follower-cnt::before {
   content: "フォロワー数：";
-}
+} */
 main .main_wrapper .main_inner .follow_form {
   margin-top: 20px;
 }
