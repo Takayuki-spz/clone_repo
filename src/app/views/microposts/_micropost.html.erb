@@ -11,6 +11,11 @@
       </div>
     </div>
     <span class="micropost_content">
+      <% if micropost.study_time_hour.present? || micropost.study_time_minute.present? %>
+        <span class="study-time">
+          <%= micropost.study_time_hour.to_i %>時間<%= micropost.study_time_minute.to_i %> 分
+        </span>
+      <% end %>
       <%= link_to micropost, class: "micropost_link" do %>
         <%= micropost.content %>
         <% if micropost.image.attached? %>
