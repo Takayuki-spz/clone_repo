@@ -2,8 +2,8 @@
   <%= render 'shared/error_messages', object: f.object %>
   <div class="micropost_form_item">
     <%= f.text_area :content, class: "micropost_textarea", placeholder: "ここに投稿内容を記入..." %>
-    <%= f.select :study_time, (0..12).to_a.map { |h| [h, h] } + ['30'], prompt: "時間", class: "micropost_select" %>
-    <%= f.select :study_time, ['00', 15, 45], prompt: "分", class: "micropost_select" %>
+    <%= f.select :study_time_hour, (0..12).to_a, prompt: "時間", class: "micropost_select" %>
+    <%= f.select :study_time_minute, ['00', 15, 30, 45], prompt: "分", class: "micropost_select" %>
     <%= f.submit "投稿する", class: "btn-primary" %>
   </div>
   <div class="micropost_form_image">
