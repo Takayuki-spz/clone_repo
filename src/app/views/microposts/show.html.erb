@@ -1,13 +1,14 @@
 <div class="main_wrapper">
 	<div class="main_inner">
+    <h1>投稿内容</h1>
+    <p>投稿者：<%= @micropost.user.name %></p>
+    <p>投稿日：<%= @micropost.created_at.strftime('%Y/%m/%d %H:%M:%S') %></p>
+    <b><%= @micropost.content %></b>
+
     <% flash.each do |message_type, message| %>
       <div class="alert-<%= message_type %>"><%= message %></div>
     <% end %>
-
-    <h1>投稿者：<%= @micropost.user.name %></h1>
-    <h2>投稿日：<%= @micropost.created_at.strftime('%Y/%m/%d %H:%M:%S') %></h2>
-    <p><%= @micropost.content %></p>
-
+    
     <div class="comment_form_box">
       <section class="comment_form_section">
         <%= render 'shared/comment_form' %>
