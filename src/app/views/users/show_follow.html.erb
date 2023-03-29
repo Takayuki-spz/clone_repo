@@ -1,7 +1,6 @@
 <div class="main_wrapper">
 	<div class="main_inner">
     <h1><%= @user.name %></h1>
-    <%= render 'shared/stats' %>
     <% if @users.any? %>
       <ul class="users_items">
         <%= render @users %>
