@@ -13,7 +13,7 @@ class Micropost < ApplicationRecord
                                       message: "should be less than 5MB" }
                                       
   validates :study_time_hour, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 12 }, allow_nil: true
-  validates :study_time_minute, inclusion: { in: [0, 15, 30, 45] }, allow_nil: true
+  validates :study_time_minute, inclusion: { in: [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55] }, allow_nil: true
 
 
 end

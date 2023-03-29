@@ -3,9 +3,6 @@
     <section class="user_name">
       <h1><%= @user.name %></h1>
     </section>
-    <section class="user_stats">
-      <%= render 'shared/stats' %>
-    </section>
     <section class="follow_form">
       <%= render 'follow_form' if logged_in? %>
     </section>

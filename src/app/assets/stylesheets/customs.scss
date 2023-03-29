@@ -516,6 +516,12 @@ main {
                     border: 2px solid #999;
                   }
                 }
+                .micropost_select{
+                  margin-bottom: 10px;
+                  select{
+                    border-radius: 5px;
+                  }
+                }
                 .btn-primary {
                   box-sizing: border-box;
                   width: 100%;
