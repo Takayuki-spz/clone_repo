@@ -1,5 +1,5 @@
 # メインのサンプルユーザーを1人作成する
-User.create!(name:                  "Example User",
+User.create!(name:                  "山田 太郎",
              email:                 "example@railstutorial.org",
              password:              "foobar",
              password_confirmation: "foobar",
@@ -37,7 +37,7 @@ microposts = Micropost.order(:created_at).take(6)
 users = User.order(:created_at).take(6)
 microposts.each do |micropost|
   users.each do |user|
-    content = Faker::Lorem.sentence(word_count: 5)
+    content = Faker::Lorem.sentence(word_count: 15)
     micropost.comments.create!(content: content, user: user)
   end
 end
