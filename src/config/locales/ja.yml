@@ -1,0 +1,22 @@
+ja:
+  datetime:
+    distance_in_words:
+      about_x_hours: '%{count}時間前'
+      about_x_months: '%{count}ヶ月前'
+      about_x_years: '%{count}年前'
+      almost_x_years: '%{count}年近く'
+      half_a_minute: '半分前'
+      less_than_x_minutes: '%{count}分前'
+      less_than_x_seconds: '%{count}秒前'
+      over_x_years: '%{count}年以上前'
+      x_days: '%{count}日前'
+      x_minutes: '%{count}分前'
+      x_months: '%{count}ヶ月前'
+      x_seconds: '%{count}秒前'
+  activerecord:
+    attributes:
+      micropost:
+        user:
+          name: "ユーザー名"
+          content: "コンテント"
+
