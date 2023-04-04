@@ -9,7 +9,7 @@
       </div>
       <h1 class="kinds-name">タイムライン</h1>
       <% flash.each do |message_type, message| %>
-      <div class="alert-<%= message_type %>"><%= message %></div>
+        <div class="alert-<%= message_type %>"><%= message %></div>
       <% end %>
       <% if logged_in? %>
       <div class="micropost_form_box">
