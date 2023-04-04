@@ -31,7 +31,7 @@
 
 ## 開発環境
 - VScode
-- docker / docker-compose
+- docker/docker-compose
 
 
 # 【機能一覧】
