@@ -7,21 +7,32 @@
 - Ruby 3.1.2
 - Rails 7.0.4
 - MySQL 8.0.31
-- Rspec
+
 ## フロントエンド
 - HTML/CSS
 - Sass
 - JavaScript
 - jQuery
 - Bootstrap
+
 ## インフラ
-- docker / docker-compose
-- (未実装) Circleci
 - (未実装) AWS (Route53,ALB,VPC,subnet,ECR,ECS,RDS,ACM,SSM,cloudWatch)
 - (未実装) terraform
+
 ## テスト
 - minitest
-- (途中) Rspec
+- Rspec
+
+## CI/CD
+- CircleCI
+
+## バージョン管理
+- Git/GitHub
+
+## 開発環境
+- VScode
+- docker / docker-compose
+
 
 # 【機能一覧】
 ## ユーザー
@@ -30,23 +41,29 @@
 - ログアウト機能
 - 閲覧
 - 編集
+
 ## フォローフォロワー機能
 - 閲覧
+
 ## タイムライン
 - 作成
 - 閲覧
 - (未実装) 編集
 - 削除
 - (未実装) いいね機能
+
 ## タイムラインへのコメント
 - 作成
 - 削除
+
 ## 検索
 - (未実装) タグからタイムラインを検索
+
 ## ToDoリスト
 - 作成
 - (未実装) 編集
 - 削除
+
 
 # 【工夫した点】
 ## バックエンド
