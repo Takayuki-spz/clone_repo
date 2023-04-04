@@ -78,5 +78,4 @@
 # 【今後の実装したいこと】
 - typeScriptの検討
 - バックエンドとフロントエンドを完全に分離し、API通信を実装
-- Ckeditorから送られてくるデータをsanitize処理しxss対策を実施
 - terraformによるインフラのコード化
